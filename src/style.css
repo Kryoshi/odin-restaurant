@@ -89,3 +89,13 @@ html, body {
 
     height: 100%
 }
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+}

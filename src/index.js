@@ -1,7 +1,12 @@
 import './style.css'
-import { tabHome } from "./home";
+import { tabHome } from "./modules/home";
+import { tabMenu } from './modules/menu';
+import { tabAbout } from './modules/about';
 
-tabHome();
+function loadPage() {
+    const content = document.querySelector('#content');
+    content.appendChild(tabHome());
+}
 
 function switchTabs() {
     const content = document.querySelector('#content');
@@ -11,7 +16,14 @@ function switchTabs() {
             clearContent();
             switch (e.target.textContent) {
                 case 'Home':
-                    tabHome()
+                    content.appendChild(tabHome());
+                break;
+                case 'Menu':
+                    content.appendChild(tabMenu());
+                break;
+                case 'About':
+                    content.appendChild(tabAbout());
+                break;
             }
         }
     });
@@ -25,4 +37,5 @@ function switchTabs() {
     }
 }
 
+loadPage();
 switchTabs();
